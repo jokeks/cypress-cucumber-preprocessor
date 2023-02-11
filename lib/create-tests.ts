@@ -706,10 +706,7 @@ export default function createTests(
 
     const endTimestamp = createTimestamp();
 
-    if (
-      remainingSteps.length > 0 &&
-      (this.currentTest?.state as unknown) !== "pending"
-    ) {
+    if (remainingSteps.length > 0 && this.currentTest?.state === "failed") {
       const error = assertAndReturn(
         this.currentTest?.err?.message,
         "Expected to find an error message"
