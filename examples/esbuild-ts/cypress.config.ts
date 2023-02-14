@@ -13,6 +13,7 @@ async function setupNodeEvents(
   on(
     "file:preprocessor",
     createBundler({
+      sourcemap: "inline",
       plugins: [createEsbuildPlugin(config)],
     })
   );

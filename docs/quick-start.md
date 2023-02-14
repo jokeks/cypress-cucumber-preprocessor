@@ -26,7 +26,8 @@ export default defineConfig({
 
       on(
         "file:preprocessor",
-        createBundler({
+        createBundler({        
+          sourcemap: "inline",
           plugins: [createEsbuildPlugin(config)],
         })
       );
